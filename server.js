@@ -8,7 +8,7 @@ var http = require('http')
 
 
 // NOTE: your dataset can be as simple as the following, you need only implement functions for addition, deletion, and modification that are triggered by outside (i.e. client) actions, and made available to the front-end
-let mongoUrl = "mongodb://localhost:27017/water";
+let mongoUrl = "mongodb://heroku_2h26wr6r:o5cbdk4o7uu7e8shib6cqst9gg@ds111113.mlab.com:11113/heroku_2h26wr6r";
 mongoose.connect(mongoUrl, { useNewUrlParser: true });
 
 mongoose.connection.on('connected', function () {
