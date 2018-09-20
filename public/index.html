@@ -1,20 +1,169 @@
 <html lang="en">
   <head>
-    <title>CS4241 Assignment 2</title>
+    <title>CS4241 Assignment 3</title>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <script src="js/scripts.js"></script>
-  </head>
-  <body>
-    <div class="header">
-    	<h1>Assignment 2</h1>
+      <script src="js/scripts.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu" rel="stylesheet">
+      <script src="Chart.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Poor+Story|Righteous" rel="stylesheet">
+      </head>
+
+
+  <body onload="loadDB()">
+    <header>
+        <h3 style="font-family: 'Raleway', cursive; font-size: 32px; padding-bottom: 20px; margin-top: 15px; color: #79ADEC">Daily Water Calculator</h3>
+        <nav>
+            <a class="link-button" href="-----"> Home</a>
+            <button class="nav-button" id="myBtn"> About</button>
+            <a class="link-button" href="https://github.com/YuxinWu1998" target="_blank"> Github </a>
+            <a class="link-button"  href="mailto:ywu8@wpi.edu?subject=Feedback"> Feedback </a>
+        </nav>
+    </header>
+
+    <div class="main-body">
+
+        <div id="myModel" class="model">
+            <div class="model-content">
+                <span class="close">&times;</span>
+                <p class="about-content" class="title" id="character" >About
+                <p class="mem-info"> This Project is Finished by:</p>
+                <p class="mem-list">
+                Yuxin Wu<br>
+                </p>
+                <p class="mem-info"> This Project:</p>
+                <p class="about-info">
+                This project can calculate the daily water you need, based on the input inforamtion.
+                </p>
+
+            </p>
+                </p>
+            </div>
+        </div>
+
+      <div class="main">
+          <form class="form-info" name="form">
+              <div class="form-info-left" id ="formLeft">
+                  <div class="exam" id ="formLeftText">
+                    Please Fill Out
+                  </div>
+                  <div class="exam" id ="formLeftText">
+                    Your Information
+                  </div>
+              </div>
+              <div class="form-info-right">
+                  <div class="gradeCal" style="padding-bottom: 40px;"> Water Calculator</div>
+                  <div id="error-input-message" style="color: red;"></div>
+                  <!-- <div class="type">
+                      <label class="label-type" style="padding-left: 20px" id="yn">Doing Exercise or Not?</label>
+                      <select id="type" class="form-select" onchange="changeColor()">
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                      </select>
+                  </div> -->
+
+                  <div class="name">
+                          <label class="input">
+                          <input type="text" class="form-field" placeholder="Your Name (e.g. Yuxin Wu)" id="name" name="name" required>
+                              <span style="color: #79ADEC; padding-left: 20px">Name: </span>
+                          </label>
+                  </div>
+
+                  <div class="min">
+                    <label class="input">
+                        <input type="number" min="0" class="form-field" placeholder="Your Exercise Duration (e.g. 5 mins)" id="min" name="min" required>
+                        <span style="color: #79ADEC; padding-left: 20px"> Exercise Min(s): </span>
+                    </label>
+                </div>
+                  
+                  <div class="age">
+                    <label class="input">
+                        <input type="number" min="0" class="form-field" placeholder="Your Age (e.g. 18 years-old)" id="age" name="age" required>
+                        <span style="color: #79ADEC; padding-left: 20px"> Age: </span>
+                    </label>
+                 </div>
+
+                  <div class="weight">
+                      <label class="input">
+                          <input type="number" min="0" class="form-field" placeholder="Your Weight (e.g. 100 lbs)" id="weight" name="weight" required>
+                          <span style="color: #79ADEC; padding-left: 20px"> Weight (in lbs): </span>
+                      </label>
+                  </div>
+                  
+                  <div class="idInput">
+                    <label class="idInput">
+                        <input type="string" min="0" class="form-field" placeholder="" id="idInput" name="idInput" required>
+                        <span style="color: #79ADEC; padding-left: 20px"></span>
+                    </label>
+                </div>
+
+                  <div class="btnClass" style="padding-left: 50px; padding-top: 20px">
+                      <button type="button" class="addbtn btn_border btn_primary btn_animated" id="addItem" onclick="addWater()">Calculate</button>
+                      <button type="reset" class="resetbtn btn_border btn_primary btn_animated" >Clear</button>
+                  </div>
+              </div>
+          </form>
+<!--
+          <div align="right">
+                  <button class="delebtn btn_border btn_primary btn_animated" id="delete" onclick="delRow()"> Delete </button>
+
+              </div>
+              -->
+          <div class="buttonAndTable">
+              <div class="buttons">
+                  <button class="delebtn btn_border btn_primary"  id="update" onclick="updateRow()" disabled = "disabled" style="visibility: visible; margin-right:5px; border: none;"> <i class="fas fa-pen-square"></i> </button>
+                  <button class="delebtn btn_border btn_primary" id="del" onclick="delRow()" disabled = "disabled" style="visibility: visible; margin-left:5px; border: none"> <i class="fas fa-trash-alt"></i> </button>
+              </div>
+              <div class="calculate-table" style="padding-top:15px;">
+                <div class="scroll-part">
+                    <table border="1" class="tbl-content">
+                        <thead class="tbl-header">
+                            <tr class="firstRow">
+                                <!-- <th style="border-top-left-radius: 30px;">Type</th> -->
+                                <th>Name</th>
+                                <th>Exercise</th>
+                                <th>Age</th>
+                                <th>Weight</th>
+                                <th>Water You Need (in oz)</th>
+                                <th style="padding-bottom:7px; border-top-right-radius: 30px;">
+                                    <label class="container">
+                                        <input class="checkbox" type="Checkbox" id="allcheck" name="checkbox" onclick="selectAll()">
+                                        <span class="ckm"></span></label></th>
+                                <th class="id" ></th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbl-body" style = "color: black" id = "table">
+                        <tr class="tbl-data">
+                        </tr>
+                        </tbody>
+                    </table>
+                    <!-- <table border="1" id = "sumTable" style="margin-top: 0px; border-top-color: #4b54a3">
+                        <tbody class="tbl-body" style = "color: black">
+                        <tr class="tbl-data2">
+                            <td style="font-weight: bolder; font-size: 16px;">Exercise?</td>
+                            <td style="font-weight: bold">   0.00  </td>
+                            <td style="font-weight: bolder; font-size: 16px;">Out of:</td>
+                            <td style="font-weight: bold">   0.00  </td>
+                            <td style="font-weight: bolder; font-size: 16px;">Weighted Average: </td>
+                            <td style="font-weight: bold">   0.00  </td>
+                        </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+              </div>
+          </div>
+    </div>
     </div>
 
-    <div class="content">
-    	<p>
-    		[Your content here]
-    	</p>
-    </div>
+    <div class="footer">
+      <footer>
+         Created by Yuxin Wu & Dababa
+      </footer>
+  </div>
 
   </body>
 </html>
