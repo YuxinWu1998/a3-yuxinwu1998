@@ -89,7 +89,7 @@ function addWater() {
                 table.rows[currentRows].cells[1].innerText = "I";
                 table.rows[currentRows].cells[2].innerText = "LOVE";
                 table.rows[currentRows].cells[3].innerText = "YOU";
-                table.rows[currentRows].cells[4].innerText = 520;
+                table.rows[currentRows].cells[4].innerText = 520.00;
             }
         }
 
