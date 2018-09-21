@@ -311,6 +311,14 @@ header {
     margin: 0 auto;
 }
 
+.fillOut {
+    color: #AFCBF6;
+    text-align: center;
+    border-bottom: solid;
+	padding-top: 21%;
+    font-size: large;
+}
+
 .min{
 	padding-left: 5px;
 	padding-top: 10px;
