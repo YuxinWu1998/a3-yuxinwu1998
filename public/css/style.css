@@ -2,24 +2,6 @@
 	font: 16px "Raleway";
 }
 
-/* .model{
-	animation: animatetop 0.3s forwards;
-	display: none;
-	position: absolute;
-	z-index: 100;
-	width: 700px;
-	height: 500px;
-	margin-top: 0px;
-	left: 370px;
-	overflow: auto;
-	border-radius: 8px;
-	border: 30px #AFCBF6;
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-	background:rgba(240, 240, 240,0.95);
-	opacity: 0.98;
-	background:linear-gradient(217deg, rgba(253, 251, 251,0.9), rgba(235, 237, 238,0.9) 70.71%);
-} */
-
 @-webkit-keyframes animatetop {
 	from {top:-500px; opacity:0}
 	to {top:80px; opacity:1}
@@ -29,16 +11,6 @@
 	from {margin-top: 500px; opacity:0}
 	to {margin-top:0px; opacity:1}
 }
-
-/* .model::-webkit-scrollbar { width: 0 !important } */
-
-/* .model-content{
-	animation: animate-content 1s;
-	background-color: transparent;
-	padding: 10px;
-	width: 95%;
-	height:95%;
-} */
 
 .h1{
 	color:white;
@@ -56,29 +28,6 @@
 	text-decoration: none;
 	cursor: pointer;
 }
-
-/* .about-content{
-	font-weight: bold;
-	text-align: center;
-	font-size:40px;
-}
-
-.mem-info{
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-}
-
-.mem-list{
-	text-align: center;
-}
-
-.about-info{
-	margin-left: 10%;
-	margin-right: 10%;
-	text-align: center;
-
-} */
 
 html{
     background: linear-gradient(rgba(175, 203, 246, 0.4), rgba(121, 173, 236, 0.7));
@@ -102,7 +51,6 @@ html{
 	opacity: 0;
 	cursor: pointer;
 }
-
 
 /******table checkbox style********/
 .ckm {
@@ -150,12 +98,11 @@ html{
 	transform: rotate(45deg);
 }
 
-
-
 h3 a {
     text-decoration: none;
     color: white;
 }
+
 body {
     background-repeat: no-repeat;
     background-size: 100%;
@@ -191,53 +138,7 @@ header {
     padding-top: 0px;
 }
 
-/********* nav button style1************/
-/* .nav-button{
-    background:#AFCBF6;
-    font: 16px Raleway;
-    color:#ffffff;
-    border:none;
-    position:relative;
-    height:23px;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
-    padding-left: 6px;
-	padding-top: 2px;
-    padding-right: 6px;
-    border-radius: 5px;
-    margin-right: 10px;
-	margin-bottom: 6px;
-    margin-bottom: 10px;
-
-}
-.nav-button:hover{
-    background:#fff;
-    color:#AFCBF6;
-}
-.nav-button:before,.nav-button:after{
-    content:'';
-    position:absolute;
-    top:0;
-    right:0;
-    height:2px;
-    width:0;
-    background: #ffffff;
-    transition:400ms ease all;
-}
-.nav-button:after{
-    right:inherit;
-    top:inherit;
-    left:0;
-    bottom:0;
-}
-
-.nav-button:hover:before,.nav-button:hover:after{
-    width:100%;
-    transition:0.28s ease all;
-} */
-
-/******** nav button style 2 for a*********/
+/******** nav button style for link button*********/
 .link-button{
 	background:#AFCBF6;
 	font: 16px Raleway;
