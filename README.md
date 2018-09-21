@@ -1,19 +1,9 @@
 Assignment 3 - Full Stack: Basic Database-enabled Web Application using HTML/CSS/JS and Node.js  
 ===
-Deliverables
----
-
-Do the following to complete this assignment:
-
-5. Ensure that your project has the proper naming scheme `a1-yourGitHubName` so we can find it.
-6. Modify the Readme to the specifications below.
-7. Create and submit a Pull Request to the original repo.
-
----
-
 ## Yuxin Wu | Daily Water Calculator
+https://a3-yuxinwu1998.herokuapp.com/
 
-I make a simple but interesting daily water calculator which lets you calculate the water (in Oz.) you and your family needs everyday easily! Name, Age, Exercise Mins and Weight are basic fields. Water is the calculated field.
+I make a simple but interesting daily water calculator which lets you calculate the water (in oz) you and your family needs everyday easily! Name, Age, Exercise Mins and Weight are basic fields. Water is the calculated field.
 
 
 ## Technical Achievements
