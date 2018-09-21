@@ -186,7 +186,7 @@ header {
 	margin: 0 auto;
 }
 
-.gradeCal{
+.waterCal{
     text-align: center;
     color:rgba(51, 95, 244, 0.4);
     font: bolder 28px 'Raleway' ;
@@ -198,11 +198,11 @@ header {
 
 /**********form style**********/
 
-.label-type{
+/* .label-type{
 	margin-left: 60px;
-}
+} */
 
-.form-select{
+/* .form-select{
 	margin-top: 15px;
 	margin-left: 100px;
 	border: 1px solid #d3d3d3;
@@ -210,11 +210,11 @@ header {
 	border-radius: 20px;
 	text-align: center;
 
-}
+} */
 
-.form-select:focus {
+/* .form-select:focus {
     outline: none;
-}
+} */
 
 .form-field {
     margin-left: 30px;
@@ -280,7 +280,6 @@ header {
 	}
 }
 
-
 .form-info-right{
     background-color: rgba(175, 203, 246, 0.0001);
     width: 380px;
@@ -310,19 +309,6 @@ header {
     align-items: center;
     width: 1000px;
     margin: 0 auto;
-}
-.exam {
-    color: #AFCBF6;
-    text-align: center;
-    border-bottom: solid;
-	padding-top: 21%;
-    font-size: large;
-}
-
-.type{
-	padding-left: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 .min{
@@ -631,7 +617,7 @@ tbody {
     color: #AFCBF6;
     clear:both;
     text-align:center;
-	opacity: 0.85;
+	opacity: 0.9;
 }
 
 ::placeholder {

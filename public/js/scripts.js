@@ -53,47 +53,10 @@ function addWater() {
             table.rows[currentRows].cells[4].innerText = sentBackObj.cal;
             table.rows[currentRows].cells[6].innerText = sentBackObj.id;
         }
-
-        // if (name.toString() === "Congshan Li") {
-        //     let data = {};
-        //     data['name'] = name.toString();
-        //     let sendData = JSON.stringify(data);
-        //     let xhr = new XMLHttpRequest();
-        //     xhr.onreadystatechange = handle_res;
-        //     xhr.open("post", "/addItem");
-        //     xhr.send(sendData);
-    
-        //     function handle_res() {
-        //         if (this.readyState !== 4) return;
-        //         if (this.status !== 200) return;
-        //         let sentBackObj = JSON.parse(this.responseText);
-        //         //insert the row
-        //         let currentRows = document.getElementById("table").rows.length;
-        //         let insertTr = document.getElementById("table").insertRow(currentRows);
-        //         for (let i = 0; i < 5; i++) {
-        //             let insertTd = insertTr.insertCell(i);
-        //             insertTd.innerHTML = '<class = "tbl-body">';
-        //             insertTr.className = 'tbl-data';
-        //         }
-        //         let insertCheckbox = insertTr.insertCell(5);
-        //         insertCheckbox.innerHTML = ' <label class="container">\n' +
-        //             '                                        <input class="tbl-ckb" type="Checkbox" id="checkbox" name="checkbox" onclick="ifAllChecked()">\n' +
-        //             '                                        <span class="ckm"></span></label>';
-    
-        //         let table = document.getElementById("table");
-        //         table.rows[currentRows].cells[0].innerText = sentBackObj.name;
-        //         table.rows[currentRows].cells[1].innerText = "I";
-        //         table.rows[currentRows].cells[2].innerText = "LOVE";
-        //         table.rows[currentRows].cells[3].innerText = "YOU";
-        //         table.rows[currentRows].cells[4].innerText = 520.00;
-        //     }
-        // }
-
     } else {
       alert("Please Fill Out All the Information Correctly!");
     }
   } else {
-        //let table = document.getElementById("table");
         let name = document.form.name.value;
         let min = document.form.min.value;
         let age = document.form.age.value;

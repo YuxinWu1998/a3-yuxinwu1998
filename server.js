@@ -190,31 +190,3 @@ function sendFile(res, filename, contentType) {
     res.end(content, 'utf-8')
   })
 }
-
-// function generateCurArray(deleteIndexArray, originalArray) {
-//   let newArray = [];
-//   deleteIndexArray = toIntArray(deleteIndexArray);
-//   for(let i = 0; i < originalArray.length; i++) {
-//       if(!contains(deleteIndexArray, i)) {
-//           newArray.push(originalArray[i]);
-//       }
-//   }
-//   return newArray;
-// }
-
-// function toIntArray(array) {
-//   let intArray = [];
-//   for(let i = 0; i < array.length; i++) {
-//       intArray.push(parseInt(array[i]));
-//   }
-//   return intArray;
-// }
-
-// function contains(array, ele) {
-//   for(let i = 0; i < array.length; i++) {
-//       if(array[i] === ele) {
-//           return true;
-//       }
-//   }
-//   return false;
-// }
