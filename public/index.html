@@ -1,7 +1,7 @@
 <html lang="en">
   <head>
     <title>CS4241 Assignment 3</title>
-    <link rel="shortcut icon" type="image/png" href="/favicon.png">
+    <link rel="icon" href="/favicon.ico">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
       <script src="js/scripts.js"></script>
@@ -13,38 +13,17 @@
       <link href="https://fonts.googleapis.com/css?family=Poor+Story|Righteous" rel="stylesheet">
       </head>
 
-
   <body onload="loadDB()">
     <header>
         <h3 style="font-family: 'Raleway', cursive; font-size: 32px; padding-bottom: 20px; margin-top: 15px; color: #79ADEC">Daily Water Calculator</h3>
         <nav>
             <a class="link-button" href="https://a3-yuxinwu1998.herokuapp.com/"> Home</a>
-            <!-- <button class="nav-button" id="myBtn"> About</button> -->
             <a class="link-button" href="https://github.com/YuxinWu1998" target="_blank"> Github </a>
             <a class="link-button"  href="mailto:ywu8@wpi.edu?subject=Feedback"> Feedback </a>
         </nav>
     </header>
 
     <div class="main-body">
-
-        <!-- <div id="myModel" class="model">
-            <div class="model-content">
-                <span class="close">&times;</span>
-                <p class="about-content" class="title" id="character" >About
-                <p class="mem-info"> This Project is Finished by:</p>
-                <p class="mem-list">
-                Yuxin Wu<br>
-                </p>
-                <p class="mem-info"> This Project:</p>
-                <p class="about-info">
-                This project can calculate the daily water you need, based on the input inforamtion.
-                </p>
-
-            </p>
-                </p>
-            </div>
-        </div> -->
-
       <div class="main">
           <form class="form-info" name="form">
               <div class="form-info-left" id ="formLeft">
@@ -58,13 +37,6 @@
               <div class="form-info-right">
                   <div class="gradeCal" style="padding-bottom: 40px;"> Water Calculator</div>
                   <div id="error-input-message" style="color: red;"></div>
-                  <!-- <div class="type">
-                      <label class="label-type" style="padding-left: 20px" id="yn">Doing Exercise or Not?</label>
-                      <select id="type" class="form-select" onchange="changeColor()">
-                          <option value="yes">Yes</option>
-                          <option value="no">No</option>
-                      </select>
-                  </div> -->
 
                   <div class="name">
                           <label class="input">
@@ -107,12 +79,7 @@
                   </div>
               </div>
           </form>
-<!--
-          <div align="right">
-                  <button class="delebtn btn_border btn_primary btn_animated" id="delete" onclick="delRow()"> Delete </button>
 
-              </div>
-              -->
           <div class="buttonAndTable">
               <div class="buttons">
                   <button class="delebtn btn_border btn_primary"  id="update" onclick="updateRow()" disabled = "disabled" style="visibility: visible; margin-right:5px; border: none;"> <i class="fas fa-pen-square"></i> </button>
@@ -123,7 +90,6 @@
                     <table border="1" class="tbl-content">
                         <thead class="tbl-header">
                             <tr class="firstRow">
-                                <!-- <th style="border-top-left-radius: 30px;">Type</th> -->
                                 <th>Name</th>
                                 <th>Exercise</th>
                                 <th>Age</th>
@@ -141,18 +107,6 @@
                         </tr>
                         </tbody>
                     </table>
-                    <!-- <table border="1" id = "sumTable" style="margin-top: 0px; border-top-color: #4b54a3">
-                        <tbody class="tbl-body" style = "color: black">
-                        <tr class="tbl-data2">
-                            <td style="font-weight: bolder; font-size: 16px;">Exercise?</td>
-                            <td style="font-weight: bold">   0.00  </td>
-                            <td style="font-weight: bolder; font-size: 16px;">Out of:</td>
-                            <td style="font-weight: bold">   0.00  </td>
-                            <td style="font-weight: bolder; font-size: 16px;">Weighted Average: </td>
-                            <td style="font-weight: bold">   0.00  </td>
-                        </tr>
-                        </tbody>
-                    </table> -->
                 </div>
               </div>
           </div>
@@ -161,7 +115,7 @@
 
     <div class="footer">
       <footer>
-         Created by Yuxin Wu & Dababa
+         Created by Yuxin Wu
       </footer>
   </div>
 

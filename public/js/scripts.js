@@ -1,13 +1,9 @@
-// Add some Javascript code here, to run on the front end.
-
 function reset() {
   document.form.name.value = "";
   document.form.min.value = "";
   document.form.age.value = "";
   document.form.weight.value = "";
 }
-
-
 
 function addWater() {
   let current = document.getElementById("addItem").innerText;
@@ -58,59 +54,51 @@ function addWater() {
             table.rows[currentRows].cells[6].innerText = sentBackObj.id;
         }
 
-        if (name.toString() === "Congshan Li") {
-            let data = {};
-            data['name'] = name.toString();
-            let sendData = JSON.stringify(data);
-            let xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = handle_res;
-            xhr.open("post", "/addItem");
-            xhr.send(sendData);
+        // if (name.toString() === "Congshan Li") {
+        //     let data = {};
+        //     data['name'] = name.toString();
+        //     let sendData = JSON.stringify(data);
+        //     let xhr = new XMLHttpRequest();
+        //     xhr.onreadystatechange = handle_res;
+        //     xhr.open("post", "/addItem");
+        //     xhr.send(sendData);
     
-            function handle_res() {
-                if (this.readyState !== 4) return;
-                if (this.status !== 200) return;
-                let sentBackObj = JSON.parse(this.responseText);
-                //insert the row
-                let currentRows = document.getElementById("table").rows.length;
-                let insertTr = document.getElementById("table").insertRow(currentRows);
-                for (let i = 0; i < 5; i++) {
-                    let insertTd = insertTr.insertCell(i);
-                    insertTd.innerHTML = '<class = "tbl-body">';
-                    insertTr.className = 'tbl-data';
-                }
-                let insertCheckbox = insertTr.insertCell(5);
-                insertCheckbox.innerHTML = ' <label class="container">\n' +
-                    '                                        <input class="tbl-ckb" type="Checkbox" id="checkbox" name="checkbox" onclick="ifAllChecked()">\n' +
-                    '                                        <span class="ckm"></span></label>';
+        //     function handle_res() {
+        //         if (this.readyState !== 4) return;
+        //         if (this.status !== 200) return;
+        //         let sentBackObj = JSON.parse(this.responseText);
+        //         //insert the row
+        //         let currentRows = document.getElementById("table").rows.length;
+        //         let insertTr = document.getElementById("table").insertRow(currentRows);
+        //         for (let i = 0; i < 5; i++) {
+        //             let insertTd = insertTr.insertCell(i);
+        //             insertTd.innerHTML = '<class = "tbl-body">';
+        //             insertTr.className = 'tbl-data';
+        //         }
+        //         let insertCheckbox = insertTr.insertCell(5);
+        //         insertCheckbox.innerHTML = ' <label class="container">\n' +
+        //             '                                        <input class="tbl-ckb" type="Checkbox" id="checkbox" name="checkbox" onclick="ifAllChecked()">\n' +
+        //             '                                        <span class="ckm"></span></label>';
     
-                let table = document.getElementById("table");
-                table.rows[currentRows].cells[0].innerText = sentBackObj.name;
-                table.rows[currentRows].cells[1].innerText = "I";
-                table.rows[currentRows].cells[2].innerText = "LOVE";
-                table.rows[currentRows].cells[3].innerText = "YOU";
-                table.rows[currentRows].cells[4].innerText = 520.00;
-            }
-        }
+        //         let table = document.getElementById("table");
+        //         table.rows[currentRows].cells[0].innerText = sentBackObj.name;
+        //         table.rows[currentRows].cells[1].innerText = "I";
+        //         table.rows[currentRows].cells[2].innerText = "LOVE";
+        //         table.rows[currentRows].cells[3].innerText = "YOU";
+        //         table.rows[currentRows].cells[4].innerText = 520.00;
+        //     }
+        // }
 
     } else {
       alert("Please Fill Out All the Information Correctly!");
     }
   } else {
-        let table = document.getElementById("table");
+        //let table = document.getElementById("table");
         let name = document.form.name.value;
         let min = document.form.min.value;
         let age = document.form.age.value;
         let weight = document.form.weight.value;
         let id = document.form.idInput.value;
-
-            // table.rows[updateRowNum].cells[0].innerText = name;
-            // table.rows[updateRowNum].cells[1].innerHTML = min;
-            // table.rows[updateRowNum].cells[2].innerHTML = age;
-            // table.rows[updateRowNum].cells[3].innerHTML = weight;
-            // table.rows[updateRowNum].cells[4].innerHTML = parseFloat(min + age * weight).toFixed(2);
-            // table.rows[updateRowNum].cells[6].innerHTML = id;
-
             let data = {};
             data['name'] = name.toString();
             data['min'] = min.toString();
@@ -128,8 +116,6 @@ function addWater() {
             for (let j = leg -1; j > 0; j--) {
                     document.getElementById("table").deleteRow(j);
                 }
-
-
             reset();
             loadDB();      
   }
@@ -137,10 +123,8 @@ function addWater() {
 
 function updateRow() {
     let checkbox = document.getElementsByName("checkbox");
-    //let sumTable = document.getElementById("sumTable");
     let table = document.getElementById("table");
   
-    // form info update:
     let name = document.getElementById("name");
     let min = document.getElementById("min");
     let age = document.getElementById("age");
@@ -155,11 +139,8 @@ function updateRow() {
             age.value = table.rows[j].cells[2].innerHTML;
             weight.value = table.rows[j].cells[3].innerHTML;
             idInput.value = table.rows[j].cells[6].innerHTML;
-            // console.log("innerhtml"+table.rows[j].cells[6].innerHTML);
-            // console.log("the id is:" + idInput.value);
         }
     }
-  
     document.getElementById("addItem").innerText = "UPDATE ITEM";
   }
 
@@ -174,7 +155,6 @@ function delRow() {
 
   for(let j = 1; j < leg; j++) {
       if(checkbox[j].checked === true) {
-          //sendData.push(j - 1);
           sendData.push(table.rows[j].cells[6].innerText);
           console.log(table.rows[j].cells[6].innerText);
       }
@@ -193,7 +173,6 @@ function delRow() {
   }
   document.getElementById("allcheck").checked = false;
   reset();
-
   buttonDisabled("del");
   buttonDisabled("update");
 }
@@ -201,7 +180,6 @@ function delRow() {
 function buttonDisabled(name){
   let button = document.getElementById(name);
   button.style.visibility = "visible";
-  //button.style.color = "lightgrey";
   button.disabled = true;
   button.className = "delebtn btn_border btn_primary";
 }
@@ -277,7 +255,6 @@ function toFloat(x) {
   return parseFloat(x).toFixed(2);
 }
 
-
 function loadDB() {
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = handle_res2;
@@ -285,7 +262,6 @@ function loadDB() {
     xhr.send();
 
     function handle_res2() {
-        //alert(this.responseText);
         if (this.readyState !== 4) return;
         if (this.status !== 200) return;
 
@@ -300,14 +276,10 @@ function loadDB() {
                 insertTd.innerHTML = '<class = "tbl-body">';
                 insertTr.className = 'tbl-data';
             }
-
             let insertCheckbox = insertTr.insertCell(5);
             insertCheckbox.innerHTML = ' <label class="container">\n' +
                 '<input class="tbl-ckb" type="Checkbox" id="checkbox" name="checkbox" onclick="ifAllChecked()">\n' +
                 '<span class="ckm"></span></label>';
-
-            //let insertID = insertTr.insertCell(5);
-            //insertID.className = 'special';
 
             let insertID = insertTr.insertCell(6);
             insertID.className = "id";
@@ -318,8 +290,6 @@ function loadDB() {
             table.rows[currentRows].cells[1].innerText = sentBackObj[j].w_min;
             table.rows[currentRows].cells[2].innerText = sentBackObj[j].w_age;
             table.rows[currentRows].cells[3].innerText = sentBackObj[j].w_weight;
-            //table.rows[currentRows].cells[4].innerText = parseFloat(sentBackObj[j].w_weight) + 1;
-            //need change
 
             if (0 < sentBackObj[j].w_age <= 30) {
                 cal111 = ((((sentBackObj[j].w_weight / 2.2) * 40) / 28.3) + sentBackObj[j].w_min * 0.4).toFixed(2);
@@ -331,7 +301,6 @@ function loadDB() {
 
             table.rows[currentRows].cells[4].innerText = cal111;
             table.rows[currentRows].cells[6].innerText = sentBackObj[j]._id;
-            //table.rows[currentRows].cells[5].innerText = sentBackObj[j]._id;
         }
     }
 }

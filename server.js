@@ -31,9 +31,7 @@ var waterSchema = new mongoose.Schema ({
 });
 
 let WaterModel = mongoose.model("Water", waterSchema);
-
 var dataSet = []
-
 
 var server = http.createServer (function (req, res) {
   var uri = url.parse(req.url)
@@ -91,7 +89,6 @@ var server = http.createServer (function (req, res) {
           data['age'] = age;
           data['weight'] = weight;
           data['cal'] = cal;
-          //data['idddd'] = cal;
 
           let new_water = new WaterModel({
             w_name: obj.name,
@@ -99,7 +96,6 @@ var server = http.createServer (function (req, res) {
             w_age: obj.age,
             w_weight: obj.weight,
             w_cal: obj.cal,
-            //e_cal: ojb.cal,
           });
 
           new_water.save(function (err, res) {
@@ -145,16 +141,6 @@ var server = http.createServer (function (req, res) {
                     if (err) console.log(err);
                     console.log('update' + docs);
                 });
-
-            // for(let i = 0; i < dataSet.length; i++) {
-            //     if(i === id) {
-            //         dataSet[i].name = name;
-            //         dataSet[i].min = min;
-            //         dataSet[i].age = age;
-            //         dataSet[i].weight = weight;
-            //     }
-            // }
-            // console.log(dataSet);
         });
       break;
 
@@ -164,7 +150,6 @@ var server = http.createServer (function (req, res) {
           deleteData += d;
       });
       req.on('end', function () {
-          //console.log(deleteData);
           let deleteArr = deleteData.split(",");
           console.log(deleteArr);
 
@@ -197,9 +182,6 @@ var server = http.createServer (function (req, res) {
 server.listen(process.env.PORT || port);
 console.log('listening on 8080')
 
-// subroutines
-// NOTE: this is an ideal place to add your data functionality
-
 function sendFile(res, filename, contentType) {
   contentType = contentType || 'text/html';
 
@@ -209,30 +191,30 @@ function sendFile(res, filename, contentType) {
   })
 }
 
-function generateCurArray(deleteIndexArray, originalArray) {
-  let newArray = [];
-  deleteIndexArray = toIntArray(deleteIndexArray);
-  for(let i = 0; i < originalArray.length; i++) {
-      if(!contains(deleteIndexArray, i)) {
-          newArray.push(originalArray[i]);
-      }
-  }
-  return newArray;
-}
+// function generateCurArray(deleteIndexArray, originalArray) {
+//   let newArray = [];
+//   deleteIndexArray = toIntArray(deleteIndexArray);
+//   for(let i = 0; i < originalArray.length; i++) {
+//       if(!contains(deleteIndexArray, i)) {
+//           newArray.push(originalArray[i]);
+//       }
+//   }
+//   return newArray;
+// }
 
-function toIntArray(array) {
-  let intArray = [];
-  for(let i = 0; i < array.length; i++) {
-      intArray.push(parseInt(array[i]));
-  }
-  return intArray;
-}
+// function toIntArray(array) {
+//   let intArray = [];
+//   for(let i = 0; i < array.length; i++) {
+//       intArray.push(parseInt(array[i]));
+//   }
+//   return intArray;
+// }
 
-function contains(array, ele) {
-  for(let i = 0; i < array.length; i++) {
-      if(array[i] === ele) {
-          return true;
-      }
-  }
-  return false;
-}
+// function contains(array, ele) {
+//   for(let i = 0; i < array.length; i++) {
+//       if(array[i] === ele) {
+//           return true;
+//       }
+//   }
+//   return false;
+// }
