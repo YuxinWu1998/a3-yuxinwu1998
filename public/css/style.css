@@ -1,11 +1,8 @@
-/*Style your own assignment! This is fun! */
-
 *{
 	font: 16px "Raleway";
 }
 
-/******style for the about page********/
-.model{
+/* .model{
 	animation: animatetop 0.3s forwards;
 	display: none;
 	position: absolute;
@@ -16,12 +13,12 @@
 	left: 370px;
 	overflow: auto;
 	border-radius: 8px;
-	border: 30px #201f53;
+	border: 30px #AFCBF6;
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 	background:rgba(240, 240, 240,0.95);
 	opacity: 0.98;
 	background:linear-gradient(217deg, rgba(253, 251, 251,0.9), rgba(235, 237, 238,0.9) 70.71%);
-}
+} */
 
 @-webkit-keyframes animatetop {
 	from {top:-500px; opacity:0}
@@ -33,15 +30,15 @@
 	to {margin-top:0px; opacity:1}
 }
 
-.model::-webkit-scrollbar { width: 0 !important }
+/* .model::-webkit-scrollbar { width: 0 !important } */
 
-.model-content{
+/* .model-content{
 	animation: animate-content 1s;
 	background-color: transparent;
 	padding: 10px;
 	width: 95%;
 	height:95%;
-}
+} */
 
 .h1{
 	color:white;
@@ -60,7 +57,7 @@
 	cursor: pointer;
 }
 
-.about-content{
+/* .about-content{
 	font-weight: bold;
 	text-align: center;
 	font-size:40px;
@@ -81,7 +78,7 @@
 	margin-right: 10%;
 	text-align: center;
 
-}
+} */
 
 html{
     background: linear-gradient(rgba(175, 203, 246, 0.4), rgba(121, 173, 236, 0.7));
@@ -160,7 +157,6 @@ h3 a {
     color: white;
 }
 body {
-    /* background: url("https://i0.wp.com/www.high-profile.com/wp-content/uploads/2018/02/corner-rendering-Large.jpg?zoom=2&ssl=1") no-repeat fixed; */
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -196,7 +192,7 @@ header {
 }
 
 /********* nav button style1************/
-.nav-button{
+/* .nav-button{
     background:#AFCBF6;
     font: 16px Raleway;
     color:#ffffff;
@@ -239,7 +235,7 @@ header {
 .nav-button:hover:before,.nav-button:hover:after{
     width:100%;
     transition:0.28s ease all;
-}
+} */
 
 /******** nav button style 2 for a*********/
 .link-button{
@@ -592,7 +588,7 @@ tbody {
 }
 
 .tbl-data:hover td {
-	background:#4b54a3;
+	background:#AFCBF6;
 	color: white;
 }
 
@@ -743,7 +739,6 @@ tbody {
 
 .id{
     width: 0px;
-	/* visibility: hidden; */
 	opacity: 0;
 }
 
